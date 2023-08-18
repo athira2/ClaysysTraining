@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+
+<div style="width: 300px; margin: 0 auto; padding: 20px; border: 1px solid #d5e0e3; background-color: #f3f5fa;">
+    <h2 style="text-align: center;">Registration Form</h2>
+    <form style="display: grid; gap: 10px;">
+        <input type="text" id="first-name" name="first-name" placeholder="first-name" style="padding: 5px; border: 1px solid #ccc;">
+        <input type="text" id="last-name" name="last-name" placeholder="Lsat-name" style="padding: 5px; border: 1px solid #ccc;">
+        <input type="date" id="dob" name="dob" placeholder="DOB" style="padding: 5px; border: 1px solid #ccc;">
+        <label>Gender:</label>
+        <label class="radio-label">
+        <input type="radio" name="gender" value="male" required> Male
+        </label>
+        <label class="radio-label">
+        <input type="radio" name="gender" value="female"> Female
+        </label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number " style="padding: 5px; border: 1px solid #ccc;">
+        <input type="text" id="address" name="address" placeholder="Address" style="padding: 5px; border: 1px solid #ccc;">
+        <select id="state" name="state" required>
+            <option value="" disabled selected>Select your state</option>
+            <option value="kl">Kerala</option>
+            <option value="tl">Tamil Nadu</option>
+            <option value="kk">Karnataka</option>
+            <option value="gu">Gujarat</option>
+            <!-- Add more options here -->
+          </select>
+          <select id="city" name="city" required>
+            <option value="" disabled selected>Select your city</option>
+            <!-- Populate city options based on the selected state -->
+          </select>
+        <input type="text" id="username" name="username" placeholder="Username" style="padding: 5px; border: 1px solid #ccc;">
+
+        <input type="password" id="password" name="password" placeholder="password" style="padding: 5px; border: 1px solid #ccc;">
+
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="pasword" style="padding: 5px; border: 1px solid #ccc;">
+
+        <input type="submit" value="Register" style="padding: 5px 10px; background-color: #007bff; color: white; border: none; cursor: pointer;">
+    </form>
+</div>
+
+</body>
+</html>
