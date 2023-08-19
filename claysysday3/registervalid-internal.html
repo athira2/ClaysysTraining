@@ -1,0 +1,170 @@
+<!-- style are defined within the head section as aseparate cs file this file is linkedby using rel and href -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<!-- <script defer src="./index.js"></script> -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    .registration-container {
+        background-color: #7a8dca;
+
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+      }
+      .registration-container h2 {
+        margin-bottom: 20px;
+      }
+      .registration-container label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .registration-container input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      .registration-container button {
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+      }
+      .registration-container label.radio-label {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      .registration-container input, .registration-container select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+</style>
+</head>
+<body>
+  <div class="registration-container">
+    <h2>Registration</h2>
+    <form action="home.html" onsubmit="return validateForm()">
+      <!-- <label for="username">Username:</label> -->
+      <input type="text" id="first-name" placeholder="first-name"  required>
+      <input type="text" id="last-name" placeholder="last-name">
+      <input type="date" id="dob" placeholder="DOB" required>
+      <!-- <label for="email">Email:</label> -->
+      <input type="age" id="age" placeholder="age" >
+      <label>Gender:</label>
+      <label class="radio-label">
+        <input type="radio" name="gender" value="male" required> Male
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="gender" value="female"> Female
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="gender" value="other"> Other
+      </label>
+      <input type="tel" id="phonenumber" placeholder="phone number" required>
+      <input type="email" id="email" placeholder="email address" required>
+      <input type="text" id="address" placeholder="Address" required>
+      <select id="state" name="State" required >
+        <option value="" disabled selected>Select State</option>
+        <option value="AP">Andhra Prades</option>
+        <option value="KA">Karnataka</option>
+        <option value="KL">Kerala</option>
+        <option value="MH">Maharashtra</option>
+        <option value="TN">Tamil Nadu</option>
+        <option value="TS">Telangana</option></select>
+      <select id="city" name="city" disabled>
+        <option value="none" selected disabled>
+          Select a State First
+        </option></select
+      ><br />
+      <input type="text" id="username" placeholder="username" required >
+      <!-- <label for="password">Password:</label> -->
+      <input type="password" id="password" placeholder="password" required>
+      <!-- <label for="confirm-password">Confirm Password:</label> -->
+      <input type="password" id="confirm-password" placeholder="confirm_password" required>
+      
+      <script>
+        const stateDropdown = document.getElementById("state");
+        const cityDropdown = document.getElementById("city");
+
+        const citiesByState = {
+          AP: ["Visakhapatnam", "Vijayawada", "Guntur"],
+          KA: ["Bengaluru", "Mysuru", "Hubballi"],
+          KL: ["Kochi", "Thiruvananthapuram", "Kozhikode"],
+          MH: ["Mumbai", "Pune", "Nagpur"],
+          TN: ["Chennai", "Coimbatore", "Madurai"],
+          TS: ["Hyderabad", "Warangal", "Karimnagar"],
+        };
+
+        stateDropdown.addEventListener("change", function () {
+          const selectedState = stateDropdown.value;
+          const cities = citiesByState[selectedState];
+
+          cityDropdown.innerHTML =
+            '<option value="none" selected disabled>Select a City</option>';
+          cityDropdown.disabled = false;
+
+          if (cities) {
+            cities.forEach((city) => {
+              const option = document.createElement("option");
+              option.value = city.toLowerCase().replace(" ", "-");
+              option.textContent = city;
+              cityDropdown.appendChild(option);
+            });
+          } else {
+            cityDropdown.innerHTML =
+              '<option value="none" selected disabled>No Cities Available</option>';
+            cityDropdown.disabled = true;
+          }
+        });
+
+        function validateForm() {
+          var password = document.getElementById("password").value;
+          var confirmPassword =
+            document.getElementById("confirm-password").value;
+          var email =
+            document.getElementById("email").value;
+
+          if (password !== confirmPassword) {
+            alert("Error: Passwords do not match!");
+            return false;
+          }
+
+          return true;
+        }
+
+
+
+        let x = document.getElementById("RegForm");
+        const firstname = document.getElementById("first-name");
+        firstname.addEventListener("focus", myFocusFunction, true);
+      </script>
+      
+      
+      
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  
+</body>
+</html>
