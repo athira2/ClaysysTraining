@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="login.css"/>
+
+<title>Login Form</title>
+
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="login.php" method="post">
+      <!-- <label for="email">Email Address</label> -->
+      <input type="text" id="email" placeholder="Email Address" required>
+      <!-- <label for="password">Password:</label> -->
+      <input type="password" id="password" placeholder="password" required>
+      <div class="remember">
+        <input type="checkbox" id="remember" name="remember" />
+        <label for="remember">Remember me  <a href="#" >forgot password</a></label>
+        
+      </div>
+      
+      <!-- <div class="remember-forgot">
+        <input type="checkbox">Remember me 
+        <a href="#" >forgot password</a>
+      </div> -->
+      <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Not a member? <a href="register.html" >Sign up now</a></p>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <div class="social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-google"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+
+    </div>
+    <p>&copy;ABC PVT LTD. All Rights Reserved</p>
+    <p>Abc Nagar, 655523</p>
+  </div>
+</body>
+</html>

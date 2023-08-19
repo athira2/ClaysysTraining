@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="home.css"/>
+
+
+</head>
+<body>
+
+<div class="topnav">
+<a class="active" href="home.html"><i class="fa fa-fw fa-home"></i> </a>
+
+  <!-- <a class="active" href="#home">Home</a> -->
+  <a href="about.html">About us</a>
+  <a href="login.html">Sign in</a>
+  <a href="register.html">Sign up</a>
+  <a href="contact.html">Contact us</a>
+  
+</div>
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 5</div>
+    <img src="C:\Users\SHYAM\Downloads\pexels-adonyi-gábor-2064357.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 5</div>
+    <img src="C:\Users\SHYAM\Downloads\pexels-chevanon-photography-302899.jpg" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 5</div>
+    <img src="C:\Users\SHYAM\Downloads\pexels-suzy-hazelwood-1325467 (1).jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 5</div>
+    <img src="C:\Users\SHYAM\Downloads\pexels-anna-tukhfatullina-food-photographerstylist-2638026.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 5</div>
+    <img src="C:\Users\SHYAM\Downloads\pexels-alex-green-5692267.jpg" style="width:100%">
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(4)"></span> 
+    <span class="dot" onclick="currentSlide(5)"></span> 
+
+  </div>
+  
+  <script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+
+<!-- <div style="padding-left:16px">
+  <h2>Top Navigation Example</h2>
+  <p>Some content..</p>
+</div> -->
+<div class="footer">
+    <div class="social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-google"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+
+    </div>
+    
+    <p>&copy;ABC PVT LTD. All Rights Reserved</p>
+    <p>Abc Nagar, 655523</p>
+  </div>
+</body>
+</html>
+ 
+
