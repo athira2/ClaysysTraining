@@ -5,30 +5,26 @@ function validateEmail(email) {
   
   document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");
+    var password = document.getElementById("password").value;
+
     const loginForm = document.querySelector("form");
   
     loginForm.addEventListener("submit", function (event) {
-      const emailValue = emailInput.value.trim();
+      const emailValue = emailInput.value;
+
   
       if (!validateEmail(emailValue)) {
         event.preventDefault();
         alert("Invalid email address format. Please enter a valid email.");
       }
+      else if (password.length<6) {
+        alert("Error: Password must contain atleast 6 charecters!");
+        return false;
+      }
     });
   });
 
-  function validateForm() {
-    var password = document.getElementById("password").value;
-    var confirmPassword =
-      document.getElementById("confirm-password").value;
-
-    if (password !== confirmPassword) {
-      alert("Error: Passwords do not match!");
-      return false;
-    }
-
-    return true;
-  }
+  
   
 
 let x = document.getElementById("ContactForm");

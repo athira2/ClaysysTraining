@@ -14,7 +14,7 @@
 <body>
   <div class="registration-container">
     <h2>Registration</h2>
-    <form id="RegisterForm" action="home.html" onsubmit="return validateForm()" method="post">
+    <form id="RegisterForm" action="home.html" onsubmit="return validateForm() " method="post">
       <!-- <label for="username">Username:</label> -->
       <input type="text" id="first-name" placeholder="first-name" >
       <input type="text" id="last-name" placeholder="last-name">
@@ -32,7 +32,7 @@
         <input type="radio" name="gender" value="other"> Other
       </label>
       <input type="tel" id="phonenumber" placeholder="phone number" >
-      <input type="email" id="email" placeholder="email address" >
+      <input type="text" id="email" placeholder="Email Address" required>
       <input type="text" id="address" placeholder="Address" >
       <select id="state" name="State" required >
         <option value="" disabled selected>Select State</option>
@@ -52,29 +52,10 @@
       <input type="password" id="password" placeholder="password" required>
       <!-- <label for="confirm-password">Confirm Password:</label> -->
       <input type="password" id="confirm-password" placeholder="confirm_password" required>
-      <button type="submit">Register</button>
+      <button type="submit" class="btn">Register</button>
     </form>
   </div>
-  <script>
-    function validateEmail(email) {
-      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      return emailPattern.test(email);
-    }
-    
-    document.addEventListener("DOMContentLoaded", function () {
-      const emailInput = document.getElementById("email");
-      const loginForm = document.querySelector("form");
-    
-      loginForm.addEventListener("submit", function (event) {
-        const emailValue = emailInput.value.trim();
-    
-        if (!validateEmail(emailValue)) {
-          event.preventDefault();
-          alert("Invalid email address format. Please enter a valid email.");
-        }
-      });
-    });
-  </script>
+  
   
 </body>
 </html>
