@@ -1,7 +1,5 @@
+use claysysTraining;
 
-
-create database claysystraining;
-use  claysystraining;
 
 
 CREATE TABLE STUDENT

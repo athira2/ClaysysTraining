@@ -1,7 +1,4 @@
-create database task3;
-
-use task3;
-
+use claysysTraining;
 
 CREATE TABLE EMPLOYEES
 (
@@ -28,6 +25,7 @@ INSERT INTO employees (employeeid,  firstname, lastname, department,salary, birt
 
 
 
+
 SELECT * FROM EMPLOYEES;
 
 /*SECOND HIGEST SALARY*/
@@ -40,5 +38,4 @@ WHERE SALARY < (SELECT MAX(SALARY) FROM EMPLOYEES);
 /*NUMBER OF EMPLOYEES WORKING IN EACH DEPARTMENT/*
 
 
-
-SELECT DEPARTMENT, COUNT(EMPLOYEEID) AS EmployeeCount FROM EMPLOYEES GROUP BY DEPARTMENT;
+SELECT Department, COUNT(EmployeeID) AS EmployeeCount FROM EMPLOYEES GROUP BY Department;

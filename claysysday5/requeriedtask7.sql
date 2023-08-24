@@ -1,4 +1,4 @@
-use  claysystraining;
+use  claysysTraining;
 
 
 CREATE TABLE STUDENTS
@@ -13,8 +13,7 @@ CREATE TABLE STUDENTS
 	);
 
 
-
-
+	
 	INSERT INTO students (studentid,  studentname, gender,course,instructor,department)VALUES(1,'Adam','Boy','CSE','Illiyas Muhammed','Engineering');
 	INSERT INTO students (studentid,  studentname, gender,course,instructor,department)VALUES(2,'Mathew','Boy','MATHS','Prabu','Arts');
 	INSERT INTO students (studentid,  studentname, gender,course,instructor,department)VALUES(3,'Rahul','Boy','Physics','Deva','Arts');
@@ -25,8 +24,6 @@ CREATE TABLE STUDENTS
 	INSERT INTO students (studentid,  studentname, gender,course,instructor,department)VALUES(8,'Asha','Girl','Physics','Deva','Arts');
 	INSERT INTO students (studentid,  studentname, gender,course,instructor,department)VALUES(9,'Shibi','Girl','Maths','Prabu','Arts');
 	INSERT INTO students (studentid,  studentname, gender,course,instructor,department)VALUES(10,'Bibin','Boy','ECE','Muneer','Engineering');
-
-
 
 
 	CREATE PROCEDURE CreateStudent
@@ -45,7 +42,6 @@ END;
 
 EXEC CreateStudent 11,'Praveen', 'Boy','Chemistry','Aravind','Science';
 
-SELECT * FROM STUDENT;
 
 
 /* UPDATE */
@@ -72,9 +68,6 @@ END;
 
 EXEC UpdateStudent 9,'Shibi','Girl','EEE','Sarath','Engineering';
 
-
-
-
 /*  DELETE  */
 
 CREATE PROCEDURE DeleteStudent
@@ -87,18 +80,16 @@ END;
 
 EXEC Deletestudent 5;
 
-
 /*  READ  */
-
-
 CREATE PROCEDURE ReadStudent
+	
 AS
 BEGIN
     SELECT * FROM STUDENTS;
 END;
 
 
-EXEC ReadStudent ;
+EXEC ReadStudent  ;
 
 
 /* SELECTING using more than one condition*/
@@ -114,5 +105,4 @@ SELECT * FROM STUDENTS WHERE Gender = @Gender AND Department=@Department
 END;
 
 EXEC  ReadAllStudent 'Girl','Engineering';
-
 

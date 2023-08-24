@@ -1,3 +1,6 @@
+use claysysTraining;
+
+
 CREATE PROCEDURE SingleStudent
     @Action VARCHAR(10),
     @StudentID INT=NULL,
